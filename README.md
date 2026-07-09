@@ -1,7 +1,7 @@
 # Cloudkart
-# ☁️ CloudCart – Scalable E-Commerce Platform on AWS
+# ☁️ Cloudkart – Scalable E-Commerce Platform on AWS
 
-CloudCart is a cloud-native e-commerce platform built to demonstrate how a modern, secure, and scalable web application can be designed, deployed, and managed using Amazon Web Services (AWS).
+Cloudkart is a cloud-native e-commerce platform built to demonstrate how a modern, secure, and scalable web application can be designed, deployed, and managed using Amazon Web Services (AWS).
 
 This project combines full-stack web development with cloud infrastructure, security, scalability, and monitoring to simulate a production-ready e-commerce environment. It showcases industry best practices for deploying highly available applications on AWS while providing hands-on experience with cloud-native architecture.
 
