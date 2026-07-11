@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudCart</title>
+    <title>CloudKart</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,31 +12,43 @@
     <header>
     <nav class="navbar">
         <div class="logo">
-            <h2>☁️ CloudCart</h2>
+            <h2>☁️ CloudKart</h2>
         </div>
 
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Login</a></li>
+            <input type="text" placeholder="🔍 Search Products..." class="search-box">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">🛒<span class="cart-count">0</span>
+</a></li>
+        
+            <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
 </header>
+<section class="promo-banner">
+    <img src="images/MEGA_SALE.jpg" alt="Mega Sale Banner">
+      <div class="promo-content">
+        
+        <p>
+            Save up to <strong>70% OFF</strong> on Electronics,
+            Fashion, Accessories, and more.
+        </p>
+        <button>Shop the Sale</button>
+      </div>
+</section>
 <section class="hero">
 
     <div class="hero-content">
 
-        <h1>Experience the Future of Online Shopping</h1>
+        <h1>CLOUDKART</h1>
 
         <p>
-            Discover premium products, unbeatable deals, and a seamless shopping experience—
-            all powered by modern cloud technology.
+            Discover premium products, unbeatable deals, and a seamless shopping experience
         </p>
 
         <div class="hero-buttons">
-            <button class="shop-btn">Shop Now</button>
+          
             <button class="learn-btn">Explore Products</button>
         </div>
 
@@ -51,7 +63,9 @@
 
         <div class="product-card">
             <span class="badge">20% OFF</span>
-            <img src="images/laptop.png" alt="Laptop">
+            <a href="product-details.html">
+    <img src="images/laptop.png" alt="Gaming Laptop">
+</a>
             <h3>Gaming Laptop</h3>
             <p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
             <p class="price">$999</p>
@@ -125,6 +139,45 @@
         <div class="category-card">
             <span>🎮</span>
             <h3>Gaming</h3>
+        </div>
+
+    </div>
+
+</section>
+<section class="reviews">
+
+    <h2>What Our Customers Say</h2>
+
+    <div class="review-grid">
+
+        <div class="review-card">
+            <p>
+                "Amazing products and super-fast delivery.
+                I'll definitely shop again!"
+            </p>
+
+            <h4>⭐⭐⭐⭐⭐</h4>
+            <span>- Rahul Sharma</span>
+        </div>
+
+        <div class="review-card">
+            <p>
+                "Excellent customer support and quality products.
+                Highly recommended."
+            </p>
+
+            <h4>⭐⭐⭐⭐⭐</h4>
+            <span>- Priya Singh</span>
+        </div>
+
+        <div class="review-card">
+            <p>
+                "The shopping experience was smooth and secure.
+                Loved it!"
+            </p>
+
+            <h4>⭐⭐⭐⭐⭐</h4>
+            <span>- Arjun Kumar</span>
         </div>
 
     </div>
