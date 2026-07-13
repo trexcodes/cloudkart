@@ -1,19 +1,28 @@
 require("dotenv").config();
-require("./config/db");
+
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
+app.use(express.json());
+const cartRoutes = require("./routes/cartRoutes");
+require("./config/db");
 
 const productRoutes = require("./routes/productRoutes");
-
+app.use("/api/cart", cartRoutes);
 app.use(express.json());
 
 app.use("/api/products", productRoutes);
 
 app.get("/", (req, res) => {
-    res.send("🚀 CloudKart Backend");
+    res.send("🚀 CloudCart Backend Running");
 });
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
+const orderRoutes = require("./routes/orderRoutes");
+app.use("/api/orders", orderRoutes);

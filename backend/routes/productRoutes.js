@@ -1,11 +1,8 @@
 const express = require("express");
-
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json({
-        message: "All Products API Working"
-    });
-});
+const productController = require("../controllers/productController");
+
+router.get("/", productController.getProducts);
 
 module.exports = router;

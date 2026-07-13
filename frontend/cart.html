@@ -27,34 +27,13 @@
 <section class="cart">
 
     <h1>🛒 Your Shopping Cart</h1>
+<div id="cart-items"></div>
 
-    <div class="cart-item">
-
-        <img src="images/laptop.png" alt="Laptop">
-
-        <div class="cart-details">
-            <h3>Gaming Laptop</h3>
-            <p>$999</p>
-
-            <div class="quantity">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-            </div>
-        </div>
-
-        <button class="remove-btn">Remove</button>
-
-    </div>
-
-    <div class="checkout">
-
-        <h2>Total: $999</h2>
-
-        <button class="checkout-btn">
-            Proceed to Checkout
-        </button>
-
+<script src="js/cart.js"></script>
+   
+        <button class="checkout-btn" onclick="window.location.href='checkout.html'">
+    Proceed to Checkout
+</button>
     </div>
 
 </section>
