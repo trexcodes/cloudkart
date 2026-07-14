@@ -3,70 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile | CloudKart</title>
+    <title>CloudKart | Login</title>
 
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
 
 <header>
-     <nav class="navbar">
+
+    <nav class="navbar">
+
         <div class="logo">
-            <h2>☁️ CloudKart</h2>
+            ☁️ CloudKart
         </div>
 
         <ul class="nav-links">
-            <input type="text" placeholder="🔍 Search Products..." class="search-box">
+
             <li><a href="index.html">Home</a></li>
+
             <li><a href="products.html">Products</a></li>
-            <li><a href="cart.html">🛒<span class="cart-count">0</span>
-</a></li>
-        
-            <li><a href="login.html">Login</a></li>
+
+            <li><a href="cart.html">🛒 Cart</a></li>
+
+            <li><a href="register.html">Register</a></li>
+
+            <li><a href="login.html" class="active">Login</a></li>
+
         </ul>
+
     </nav>
+
 </header>
 
-<section class="profile">
+<div class="login-container">
 
-    <div class="profile-card">
+    <div class="login-box">
 
-        <img src="images/profile.png" alt="Profile">
+        <h1>Welcome Back 👋</h1>
 
-        <h2>Raj Mahto</h2>
+        <p>Login to continue shopping on CloudKart.</p>
 
-        <p>raj@example.com</p>
+        <form id="loginForm">
 
-        <button>Edit Profile</button>
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+            <div class="options">
+
+                <label>
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+
+                <a href="#">Forgot Password?</a>
+
+            </div>
+
+            <button type="submit">
+
+                Login
+
+            </button>
+
+        </form>
+
+        <div class="register">
+
+            Don't have an account?
+
+            <a href="register.html">
+
+                Create Account
+
+            </a>
+
+        </div>
 
     </div>
 
-    <div class="dashboard">
+</div>
 
-        <div class="card">
-            <h3>Orders</h3>
-            <p>12</p>
-        </div>
-
-        <div class="card">
-            <h3>Wishlist</h3>
-            <p>8</p>
-        </div>
-
-        <div class="card">
-            <h3>Cart</h3>
-            <p>3</p>
-        </div>
-
-        <div class="card">
-            <h3>Rewards</h3>
-            <p>450 Points</p>
-        </div>
-
-    </div>
-
-</section>
+<script src="js/auth.js"></script>
 
 </body>
 </html>

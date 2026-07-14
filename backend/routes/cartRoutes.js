@@ -1,30 +1,51 @@
 const express = require("express");
 const router = express.Router();
-
 const db = require("../config/db");
 
 let cart = [];
 
-// Get cart with product details
+// Get Cart
 router.get("/", (req, res) => {
-    if (cart.length === 0) {
+
+    if(cart.length === 0){
         return res.json([]);
     }
 
     const ids = cart.map(item => item.productId);
 
-    const sql = `SELECT * FROM products WHERE id IN (${ids.join(",")})`;
+    db.query(
+        `SELECT * FROM products WHERE id IN (${ids.join(",")})`,
+        (err, results) => {
 
-    db.query(sql, (err, results) => {
-        if (err) return res.status(500).json(err);
-        res.json(results);
-    });
+            if(err) return res.status(500).json(err);
+
+            res.json(results);
+        }
+    );
 });
 
-// Add to cart
-router.post("/", (req, res) => {
+// Add to Cart
+router.post("/", (req,res)=>{
+
     cart.push(req.body);
-    res.json({ message: "Product added to cart!" });
+
+    res.json({
+        message:"Product added to cart!"
+    });
+
+});
+
+// Remove from Cart
+router.delete("/:id",(req,res)=>{
+
+    const id = parseInt(req.params.id);
+
+    cart = cart.filter(item => item.productId !== id);
+
+    res.json({
+        message:"Product removed successfully!"
+    });
+
 });
 
 module.exports = router;

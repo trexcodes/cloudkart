@@ -16,5 +16,17 @@ router.post("/", (req, res) => {
         res.json({ message: "Order placed successfully!" });
     });
 });
+router.get("/", (req, res) => {
 
+    db.query(
+        "SELECT * FROM orders ORDER BY order_date DESC",
+        (err, results) => {
+
+            if (err) return res.status(500).json(err);
+
+            res.json(results);
+
+        });
+
+});
 module.exports = router;

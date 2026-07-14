@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudCart | Register</title>
+
+    <title>CloudKart | Register</title>
 
     <link rel="stylesheet" href="css/register.css">
+
 </head>
 
 <body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            ☁️ CloudKart
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="products.html">Products</a></li>
+
+            <li><a href="cart.html">🛒 Cart</a></li>
+
+            <li><a href="register.html" class="active">Register</a></li>
+
+            <li><a href="login.html">Login</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
 
 <div class="register-container">
 
@@ -18,30 +51,44 @@
 
         <p>Join CloudKart and start shopping today.</p>
 
-        <form>
+        <form id="registerForm">
 
-            <input type="text" placeholder="Full Name" required>
+            <input type="text" id="fullname" placeholder="Full Name" required>
 
-            <input type="email" placeholder="Email Address" required>
+            <input type="email" id="email" placeholder="Email Address" required>
 
-            <input type="tel" placeholder="Phone Number" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
 
-            <input type="password" placeholder="Password" required>
+            <input type="password" id="password" placeholder="Password" required>
 
-            <input type="password" placeholder="Confirm Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
 
-            <button type="submit">Create Account</button>
+            <button type="submit">
+
+                Create Account
+
+            </button>
 
         </form>
 
-        <p class="login-link">
+        <div class="login-link">
+
             Already have an account?
-            <a href="login.html">Login</a>
-        </p>
+
+            <a href="login.html">
+
+                Login
+
+            </a>
+
+        </div>
 
     </div>
 
 </div>
 
+<script src="js/auth.js"></script>
+
 </body>
+
 </html>

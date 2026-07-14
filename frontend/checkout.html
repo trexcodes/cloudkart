@@ -29,30 +29,60 @@
 
     <h1>Checkout</h1>
 
-    <form>
+    <form id="checkoutForm">
 
-        <input type="text" placeholder="Full Name" required>
+    <input
+        type="text"
+        id="name"
+        placeholder="Full Name"
+        required
+    >
 
-        <input type="email" placeholder="Email Address" required>
+    <input
+        type="email"
+        id="email"
+        placeholder="Email Address"
+        required
+    >
 
-        <input type="text" placeholder="Shipping Address" required>
+    <input
+        type="text"
+        id="address"
+        placeholder="Shipping Address"
+        required
+    >
 
-        <input type="text" placeholder="City" required>
+    <input
+        type="text"
+        id="city"
+        placeholder="City"
+        required
+    >
 
-        <input type="text" placeholder="State" required>
+    <input
+        type="text"
+        id="state"
+        placeholder="State"
+        required
+    >
 
-        <input type="text" placeholder="PIN Code" required>
+    <input
+        type="text"
+        id="pincode"
+        placeholder="PIN Code"
+        required
+    >
 
-        <select>
-            <option>Cash on Delivery</option>
-            <option>Credit Card</option>
-            <option>Debit Card</option>
-            <option>UPI</option>
-        </select>
+    <select id="payment">
+        <option>Cash on Delivery</option>
+        <option>Credit Card</option>
+        <option>Debit Card</option>
+        <option>UPI</option>
+    </select>
 
-        <button>Place Order</button>
+    <button type="submit">Place Order</button>
 
-    </form>
+</form>
 
 </section>
 

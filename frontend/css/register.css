@@ -2,23 +2,59 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:'Segoe UI',Arial,sans-serif;
 }
 
 body{
-    height:100vh;
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#1e293b;
+    padding:18px 60px;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-links a.active,
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.register-container{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#1d4ed8,#2563eb);
+    min-height:calc(100vh - 80px);
 }
 
 .register-box{
     width:450px;
-    background:white;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
     padding:40px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    border-radius:20px;
+    color:white;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 .register-box h1{
@@ -28,7 +64,6 @@ body{
 
 .register-box p{
     text-align:center;
-    color:#666;
     margin-bottom:25px;
 }
 
@@ -36,21 +71,26 @@ input{
     width:100%;
     padding:15px;
     margin-bottom:18px;
-    border:1px solid #ddd;
-    border-radius:8px;
+    border:none;
+    border-radius:10px;
+    background:rgba(255,255,255,.2);
+    color:white;
     font-size:16px;
+}
+
+input::placeholder{
+    color:#ddd;
 }
 
 button{
     width:100%;
     padding:15px;
     border:none;
+    border-radius:10px;
     background:#2563eb;
     color:white;
     font-size:18px;
-    border-radius:8px;
     cursor:pointer;
-    transition:.3s;
 }
 
 button:hover{
@@ -58,12 +98,12 @@ button:hover{
 }
 
 .login-link{
-    margin-top:20px;
     text-align:center;
+    margin-top:20px;
 }
 
 .login-link a{
-    color:#2563eb;
+    color:#38bdf8;
     text-decoration:none;
     font-weight:bold;
 }

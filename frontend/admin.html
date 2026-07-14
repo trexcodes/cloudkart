@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudKart Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            ☁️ CloudKart Admin
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="products.html">Products</a></li>
+
+            <li><a href="profile.html">Profile</a></li>
+
+            <li><a href="admin.html" class="active">Dashboard</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<section class="dashboard">
+
+    <h1>Admin Dashboard</h1>
+
+    <div class="stats">
+
+        <div class="card">
+            <h3>Total Products</h3>
+            <p id="totalProducts">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Users</h3>
+            <p id="totalUsers">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Orders</h3>
+            <p id="totalOrders">0</p>
+        </div>
+
+    </div>
+
+    <div class="product-form">
+
+        <h2>Add Product</h2>
+
+        <form id="productForm">
+
+            <input type="text" id="name" placeholder="Product Name" required>
+
+            <input type="number" id="price" placeholder="Price" required>
+
+            <input type="text" id="category" placeholder="Category" required>
+
+            <input type="text" id="image" placeholder="Image File Name" required>
+
+            <input type="number" id="stock" placeholder="Stock" required>
+
+            <textarea id="description" placeholder="Description"></textarea>
+
+            <button type="submit">
+                Add Product
+            </button>
+
+        </form>
+
+
+    </div>
+<h2>Manage Products</h2>
+
+<table id="productTable">
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Image</th>
+
+            <th>Name</th>
+
+            <th>Price</th>
+
+            <th>Stock</th>
+
+            <th>Action</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    </tbody>
+
+</table>
+</section>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>
