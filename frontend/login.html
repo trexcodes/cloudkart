@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudCart | Login</title>
+    <title>CloudKart | Login</title>
 
     <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
 
-    <header>
+<header>
+
     <nav class="navbar">
+
         <div class="logo">
             <h2>☁️ CloudKart</h2>
         </div>
 
         <ul class="nav-links">
-            <input type="text" placeholder="🔍 Search Products..." class="search-box">
+
             <li><a href="index.html">Home</a></li>
+
             <li><a href="products.html">Products</a></li>
-            <li><a href="cart.html">🛒<span class="cart-count">0</span>
-</a></li>
-        
-            <li><a href="login.html">Login</a></li>
+
+            <li>
+                <a href="cart.html">
+                    🛒 <span class="cart-count">0</span>
+                </a>
+            </li>
+
+            <li id="loginMenu">
+                <a href="login.html">Login</a>
+            </li>
+
+            <li id="profileMenu" class="dropdown" style="display:none;">
+
+                <a href="#" id="userName">👤 User ▼</a>
+
+                <ul class="dropdown-menu">
+
+                    <li><a href="profile.html">My Profile</a></li>
+
+                    <li><a href="orders.html">My Orders</a></li>
+
+                    <li><a href="wishlist.html">Wishlist</a></li>
+
+                    <li><a href="#" onclick="logout()">Logout</a></li>
+
+                </ul>
+
+            </li>
+
         </ul>
+
     </nav>
+
 </header>
+
 <div class="login-container">
 
     <div class="login-box">
@@ -35,35 +67,60 @@
 
         <p>Login to continue shopping.</p>
 
-        <form>
+        <form id="loginForm">
 
-            <input type="email" placeholder="Email Address" required>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+                required
+            >
 
-            <input type="password" placeholder="Password" required>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
 
             <div class="options">
+
                 <label>
+
                     <input type="checkbox">
+
                     Remember Me
+
                 </label>
 
                 <a href="#">Forgot Password?</a>
+
             </div>
 
             <button type="submit">
+
                 Login
+
             </button>
 
         </form>
 
         <p class="register">
+
             Don't have an account?
+
             <a href="register.html">Register</a>
+
         </p>
 
     </div>
 
 </div>
+
+<script src="js/auth.js"></script>
+<script src="js/navbar.js"></script>
 
 </body>
 </html>

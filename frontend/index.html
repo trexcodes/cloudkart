@@ -16,14 +16,38 @@
         </div>
 
         <ul class="nav-links">
-            <input type="text" placeholder="🔍 Search Products..." class="search-box">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="cart.html">🛒<span class="cart-count">0</span>
-</a></li>
-        
-            <li><a href="login.html">Login</a></li>
+
+    <li><a href="index.html">Home</a></li>
+
+    <li><a href="products.html">Products</a></li>
+
+    <li><a href="cart.html">
+        🛒 <span class="cart-count">0</span>
+    </a></li>
+
+    <li id="loginMenu">
+        <a href="login.html">Login</a>
+    </li>
+
+    <li id="profileMenu" style="display:none;" class="dropdown">
+
+        <a href="#" id="userName">👤 User ▼</a>
+
+        <ul class="dropdown-menu">
+
+            <li><a href="profile.html">My Profile</a></li>
+
+            <li><a href="orders.html">My Orders</a></li>
+
+            <li><a href="wishlist.html">Wishlist</a></li>
+
+            <li><a href="#" onclick="logout()">Logout</a></li>
+
         </ul>
+
+    </li>
+
+</ul>
     </nav>
 </header>
 <section class="promo-banner">
@@ -59,45 +83,7 @@
 
     <h2>Featured Products</h2>
 
-    <div class="product-container">
-
-        <div class="product-card">
-            <span class="badge">20% OFF</span>
-            <a href="product-details.html">
-    <img src="images/laptop.png" alt="Gaming Laptop">
-</a>
-            <h3>Gaming Laptop</h3>
-            <p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
-            <p class="price">$999</p>
-            <button>Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">20% OFF</span>
-            <img src="images/headphone.png" alt="Headphones">
-            <h3>Wireless Headphones</h3>
-            <p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
-            <p class="price">$149</p>
-            <button>Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">20% OFF</span>
-            <img src="images/watch.png" alt="Smart Watch">
-            <h3>Smart Watch</h3>
-            <p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
-            <p class="price">$199</p>
-            <button>Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-            <span class="badge">20% OFF</span>
-            <img src="images/phone.png" alt="Smartphone">
-            <h3>Smartphone</h3>
-            <p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
-            <p class="price">$799</p>
-            <button>Add to Cart</button>
-        </div>
+    <div class="products" id="featuredProducts">
 
     </div>
 
@@ -184,6 +170,7 @@
 
 </section>
 <script src="js/main.js"></script>
+<script src="js/navbar.js"></script>
 
 </body>
 </html>

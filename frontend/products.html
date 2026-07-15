@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudCart | Products</title>
+    <title>CloudKart | Products</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,11 +17,38 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="login.html">Login</a></li>
+
+    <li><a href="index.html">Home</a></li>
+
+    <li><a href="products.html">Products</a></li>
+
+    <li><a href="cart.html">
+        🛒 <span class="cart-count">0</span>
+    </a></li>
+
+    <li id="loginMenu">
+        <a href="login.html">Login</a>
+    </li>
+
+    <li id="profileMenu" style="display:none;" class="dropdown">
+
+        <a href="#" id="userName">👤 User ▼</a>
+
+        <ul class="dropdown-menu">
+
+            <li><a href="profile.html">My Profile</a></li>
+
+            <li><a href="orders.html">My Orders</a></li>
+
+            <li><a href="wishlist.html">Wishlist</a></li>
+
+            <li><a href="#" onclick="logout()">Logout</a></li>
+
         </ul>
+
+    </li>
+
+</ul>
     </nav>
 </header>
 
@@ -56,5 +83,6 @@
 <div id="product-list"></div>
     
 <script src="js/product.js"></script>
+<script src="js/navbar.js"></script>
 </body>
 </html>

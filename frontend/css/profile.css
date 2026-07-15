@@ -1,12 +1,9 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
 body{
-    background:#f5f7fa;
+
+margin:0;
+font-family:Arial;
+background:#f5f7fb;
+
 }
 .navbar{
     display:flex;
@@ -14,7 +11,7 @@ body{
     align-items:center;
     background:#464448;
     color:white;
-    padding:20px 60px;
+    padding:20px 40px;
     position:sticky;
     top:0;
     z-index:1000;
@@ -43,65 +40,145 @@ body{
 .nav-links a:hover{
     color:#ffd43b;
 }
+.cart-count{
+    background:red;
+    color:white;
+    padding:2px ;
+    border-radius:50%;
+    font-size:12px;
+}
+
+
+.dropdown{
+
+position:relative;
+
+}
+
+.dropdown-menu{
+
+display:none;
+
+position:absolute;
+
+right:0;
+
+background:white;
+
+border-radius:10px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+min-width:180px;
+
+padding:10px 0;
+
+}
+
+.dropdown-menu li{
+
+list-style:none;
+
+}
+
+.dropdown-menu a{
+
+display:block;
+
+padding:12px 20px;
+
+color:#333;
+
+}
+
+.dropdown-menu a:hover{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.dropdown:hover .dropdown-menu{
+
+display:block;
+
+}
+
 .profile{
-    width:90%;
-    margin:50px auto;
+
+display:flex;
+
+justify-content:center;
+
+margin-top:60px;
+
 }
 
 .profile-card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+width:380px;
+
+text-align:center;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
 }
 
-.profile-card img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
+.profile-img{
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+margin-bottom:20px;
+
 }
 
 .profile-card h2{
-    margin-top:15px;
+
+margin-bottom:10px;
+
 }
 
 .profile-card p{
-    color:#666;
-    margin:10px 0;
+
+color:#666;
+
+margin:8px 0;
+
 }
 
-.profile-card button{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
+button{
+
+margin-top:20px;
+
+padding:12px 30px;
+
+border:none;
+
+border-radius:8px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
 }
 
-.dashboard{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    margin-top:40px;
-}
+button:hover{
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
-}
+background:#1d4ed8;
 
-.card h3{
-    margin-bottom:10px;
-    color:#2563eb;
-}
-
-.card p{
-    font-size:28px;
-    font-weight:bold;
 }

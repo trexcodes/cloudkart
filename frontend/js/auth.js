@@ -1,13 +1,17 @@
+console.log("auth.js loaded");
+
 const fullname = document.getElementById("fullname");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
 
-// LOGIN
+// ================= LOGIN =================
+
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
+
     loginForm.addEventListener("submit", function (e) {
 
         e.preventDefault();
@@ -28,17 +32,27 @@ if (loginForm) {
             alert(data.message);
 
             if (data.success) {
+
                 localStorage.setItem("user", JSON.stringify(data.user));
-                window.location = "index.html";
+
+                window.location.href = "index.html";
+
             }
 
         })
-        .catch(console.error);
+        .catch(err => {
+
+            console.error(err);
+            alert("Something went wrong.");
+
+        });
 
     });
+
 }
 
-// REGISTER
+// ================= REGISTER =================
+
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
@@ -48,8 +62,10 @@ if (registerForm) {
         e.preventDefault();
 
         if (password.value !== confirmPassword.value) {
+
             alert("Passwords do not match");
             return;
+
         }
 
         fetch("http://localhost:3000/api/users/register", {
@@ -64,17 +80,25 @@ if (registerForm) {
                 password: password.value
             })
         })
-        .then(res => res.json())
-        .then(data => {
+        .then(async (res) => {
+
+            const data = await res.json();
 
             alert(data.message);
 
-            if (data.message === "Registration Successful") {
-                window.location = "login.html";
+            if (res.ok) {
+
+                window.location.href = "login.html";
+
             }
 
         })
-        .catch(console.error);
+        .catch(err => {
+
+            console.error(err);
+            alert("Server Error");
+
+        });
 
     });
 

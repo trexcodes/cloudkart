@@ -2,45 +2,92 @@ const express = require("express");
 const router = express.Router();
 const db = require("../config/db");
 const bcrypt = require("bcrypt");
-
 router.post("/register", async (req, res) => {
 
-    const { fullname, email, phone, password } = req.body;
+    try {
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+        const { fullname, email, phone, password } = req.body;
 
-    const sql = `
-        INSERT INTO users(fullname,email,phone,password)
-        VALUES(?,?,?,?)
-    `;
+        // Validate input
+        if (!fullname || !email || !phone || !password) {
+            return res.status(400).json({
+                success: false,
+                message: "Please fill all fields."
+            });
+        }
 
-    db.query(
-        sql,
-        [fullname, email, phone, hashedPassword],
-        (err) => {
+        // Hash password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        const sql = `
+            INSERT INTO users (fullname, email, phone, password)
+            VALUES (?, ?, ?, ?)
+        `;
+
+        db.query(sql, [fullname, email, phone, hashedPassword], (err, result) => {
 
             if (err) {
-                return res.status(500).json(err);
+
+                console.error(err);
+
+                // Duplicate email
+                if (err.code === "ER_DUP_ENTRY") {
+                    return res.status(400).json({
+                        success: false,
+                        message: "Email already registered."
+                    });
+                }
+
+                return res.status(500).json({
+                    success: false,
+                    message: "Registration failed."
+                });
             }
 
-            res.json({
-                message: "Registration Successful"
+            return res.status(201).json({
+                success: true,
+                message: "Registration Successful",
+                userId: result.insertId
             });
 
-        }
-    );
+        });
 
-});   // <-- Register route ends here
+    } catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error"
+        });
+
+    }
+
+});
+// ================= LOGIN =================
 
 router.post("/login", (req, res) => {
 
     const { email, password } = req.body;
 
+    if (!email || !password) {
+        return res.status(400).json({
+            success: false,
+            message: "Please enter email and password."
+        });
+    }
+
     const sql = "SELECT * FROM users WHERE email = ?";
 
     db.query(sql, [email], async (err, results) => {
 
-        if (err) return res.status(500).json(err);
+        if (err) {
+            console.error(err);
+            return res.status(500).json({
+                success: false,
+                message: "Server Error"
+            });
+        }
 
         if (results.length === 0) {
             return res.json({
@@ -60,7 +107,9 @@ router.post("/login", (req, res) => {
             });
         }
 
-        res.json({
+        delete user.password;
+
+        return res.json({
             success: true,
             message: "Login Successful",
             user
@@ -69,5 +118,4 @@ router.post("/login", (req, res) => {
     });
 
 });
-
 module.exports = router;

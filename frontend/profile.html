@@ -1,101 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudKart | Login</title>
 
-    <link rel="stylesheet" href="css/login.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Profile | CloudKart</title>
+
+<link rel="stylesheet" href="css/profile.css">
+
 </head>
-
 <body>
 
 <header>
 
-    <nav class="navbar">
+<nav class="navbar">
 
-        <div class="logo">
-            ☁️ CloudKart
-        </div>
+<div class="logo">
+<h2>☁️ CloudKart</h2>
+</div>
 
-        <ul class="nav-links">
+<ul class="nav-links">
 
-            <li><a href="index.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="cart.html">🛒 Cart</a></li>
+<li><a href="orders.html">Orders</a></li>
 
-            <li><a href="products.html">Products</a></li>
+<li class="dropdown">
 
-            <li><a href="cart.html">🛒 Cart</a></li>
+<a href="#">👤 <span id="navName">User</span> ▼</a>
 
-            <li><a href="register.html">Register</a></li>
+<ul class="dropdown-menu">
 
-            <li><a href="login.html" class="active">Login</a></li>
+<li><a href="orders.html">My Orders</a></li>
+<li><a href="#" onclick="logout()">Logout</a></li>
+</ul>
 
-        </ul>
+</li>
 
-    </nav>
+</ul>
+
+</nav>
 
 </header>
 
-<div class="login-container">
+<section class="profile">
 
-    <div class="login-box">
+<div class="profile-card">
 
-        <h1>Welcome Back 👋</h1>
+<img src="images/user.png" class="profile-img">
 
-        <p>Login to continue shopping on CloudKart.</p>
+<h2 id="fullname"></h2>
 
-        <form id="loginForm">
+<p id="email"></p>
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Email Address"
-                required
-            >
+<p id="phone"></p>
 
-            <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                required
-            >
-
-            <div class="options">
-
-                <label>
-                    <input type="checkbox">
-                    Remember Me
-                </label>
-
-                <a href="#">Forgot Password?</a>
-
-            </div>
-
-            <button type="submit">
-
-                Login
-
-            </button>
-
-        </form>
-
-        <div class="register">
-
-            Don't have an account?
-
-            <a href="register.html">
-
-                Create Account
-
-            </a>
-
-        </div>
-
-    </div>
+<button onclick="logout()">Logout</button>
 
 </div>
 
-<script src="js/auth.js"></script>
+</section>
+
+<script src="js/profile.js"></script>
 
 </body>
 </html>
