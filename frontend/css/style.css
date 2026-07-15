@@ -453,15 +453,20 @@ body{
 .dropdown-menu li a{
     display:block;
     color:#333;
-    padding:12px 18px;
+    padding:14px 20px;
+    width:100%;
+    transition:0.3s;
+    box-sizing:border-box;
     text-decoration:none;
 }
 
 .dropdown-menu li a:hover{
     background:#2563eb;
     color:white;
+    width: 120px;
 }
 
 .dropdown:hover .dropdown-menu{
     display:block;
+
 }
